@@ -3,13 +3,11 @@ package at.stritzingerit.demo.springdatawebh2demo.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Description;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -18,9 +16,11 @@ import java.io.Serializable;
 @Description("user table")
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class User implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 

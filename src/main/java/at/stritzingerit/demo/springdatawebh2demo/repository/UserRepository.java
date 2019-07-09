@@ -20,5 +20,5 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query(value = "SELECT * FROM User WHERE LAST_NAME = :firstName", nativeQuery = true)
     User findActiveUserByLastName(@Param("firstName") String firstName);
-    
+
 }
